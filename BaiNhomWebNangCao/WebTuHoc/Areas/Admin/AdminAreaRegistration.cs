@@ -14,11 +14,7 @@ namespace WebTuHoc.Areas.Admin
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
-            context.MapRoute(
-                "LoaiBaiHoc",
-                "LoaiBaiHoc/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
+
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",

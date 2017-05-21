@@ -8,19 +8,8 @@ using EFController;
 
 namespace WebTuHoc.Areas.Admin.Controllers
 {
-    public class ThuController : Controller
+    public class ThuController : DefaultController<LoaiBaiHoc>
     {
-        // GET: Admin/Thu
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult List()
-        {
-            ModelController<LoaiBaiHoc> lbh = new EFController.LoaiBaiHocController();
-            var lsLbh = lbh.SelectAll();
-            return View(lsLbh);
-        }
+        
     }
 }

@@ -8,25 +8,24 @@ using EFController;
 
 namespace WebTuHoc.Areas.Admin.Controllers
 {
-    public class LoaiBaiHocController : Controller
+    public class LoaiBaiHocController : DefaultController<LoaiBaiHoc>
     {
         // GET: Admin/LoaiBaiHoc
-        public ActionResult Index()
+        public override ActionResult Create()
         {
-            ModelController<LoaiBaiHoc> lbh = new EFController.LoaiBaiHocController();
-            var lsLbh = lbh.SelectAll();
-            return View(lsLbh);
-        }
-        [HttpPost]
-        public ActionResult Create()
-        {
-            
+            ModelController<LoaiBaiHoc> Mlbh = new EFController.LoaiBaiHocController();
+            ViewData["LoaiBHs"] = Mlbh.SelectAll();
             return View();
         }
 
-        private EFController.LoaiBaiHocController GetLoaiBaiHoc()
+
+        public override ActionResult Edit(int id)
         {
-            return null;
+            ModelController<LoaiBaiHoc> Mlbh = new EFController.LoaiBaiHocController();
+            var lbh = Mlbh.SelectWhere("IdLBH == " + id).FirstOrDefault();
+            ViewData["LoaiBHs"] = Mlbh.SelectAll();
+            return View(lbh);
         }
+
     }
 }

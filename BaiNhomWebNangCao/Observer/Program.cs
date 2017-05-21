@@ -28,6 +28,9 @@ namespace Observer
             //tehm.Insert(LBH);
 
             List<Model.LoaiBaiHoc> ls = tehm.SelectAll();
+            LoaiBaiHoc a = new LoaiBaiHoc() { IdLBH = 1, Ten = "Thu 11", AnHien = true, KeyWords = "thu 11", MoTa = "thu 11 thu 11", ThuTu = 1 };
+            LoaiBaiHoc b = tehm.SelectWhere("IdLBH ==" +1).First();
+            tehm.Update(a,b);
             foreach (var item in ls)
             {
                 Console.WriteLine(item.KeyWords);

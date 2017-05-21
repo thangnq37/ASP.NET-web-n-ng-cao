@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Model.LoaiBaiHoc>
+﻿@model IEnumerable<Model.BinhLuan>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -7,12 +8,12 @@
 
 <section class="content-header">
     <h1>
-        Loại Bài Học
+        Bình Luận
         @*<small>Version 2.0</small>*@
     </h1>
     <ol class="breadcrumb">
         <li><a href="../Main"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Loại bài học</li>
+        <li class="active">Bình Luận</li>
     </ol>
 </section>
 <section class="content-header">
@@ -69,8 +70,8 @@
     </div>
 </section>
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
+<!-- Content Header (Page header) -->
+<section class="content-header">
     <h1>
         Data Tables
         <small>advanced tables</small>
@@ -80,19 +81,19 @@
         <li><a href="#">Tables</a></li>
         <li class="active">Data tables</li>
     </ol>
-    </section>
-    <!-- Main content -->
-    <section class="content">
+</section>
+<!-- Main content -->
+<section class="content">
     <div class="row">
         <div class="col-xs-12">
             <!-- /.box -->
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Danh Sách Loại Bài Học</h3>
+                    <h3 class="box-title">Danh Sách Bình Luận</h3>
                 </div>
                 <div>
                     <p>
-                        @Html.ActionLink("Thêm Loại Bài Mới", "Create")
+                        @Html.ActionLink("Thêm Bình Luận", "Create")
                     </p>
                 </div>
                 <!-- /.box-header -->
@@ -101,22 +102,16 @@
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Ten)
+                                    @Html.DisplayNameFor(model => model.NoiDung)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.ThuTu)
+                                    @Html.DisplayNameFor(model => model.Ngay)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Id_LBH)
+                                    @Html.DisplayNameFor(model => model.BaiHoc.TieuDe)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.KeyWords)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MoTa)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.AnHien)
+                                    @Html.DisplayNameFor(model => model.Users.HoTen)
                                 </th>
                                 <th></th>
                             </tr>
@@ -126,27 +121,21 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Ten)
+                                        @Html.DisplayFor(modelItem => item.NoiDung)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.ThuTu)
+                                        @Html.DisplayFor(modelItem => item.Ngay)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Id_LBH)
+                                        @Html.DisplayFor(modelItem => item.BaiHoc.TieuDe)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.KeyWords)
+                                        @Html.DisplayFor(modelItem => item.Users.HoTen)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.MoTa)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.AnHien)
-                                    </td>
-                                    <td>
-                                        @Html.ActionLink("Edit", "Edit", new { id = item.IdLBH }) |
-                                        @Html.ActionLink("Details", "Details", new { id = item.IdLBH }) |
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.IdLBH })
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.IdBinhLuan }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.IdBinhLuan }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.IdBinhLuan })
                                     </td>
                                 </tr>
                             }
@@ -154,22 +143,16 @@
                         <tfoot>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Ten)
+                                    @Html.DisplayNameFor(model => model.NoiDung)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.ThuTu)
+                                    @Html.DisplayNameFor(model => model.Ngay)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Id_LBH)
+                                    @Html.DisplayNameFor(model => model.BaiHoc.TieuDe)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.KeyWords)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MoTa)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.AnHien)
+                                    @Html.DisplayNameFor(model => model.Users.HoTen)
                                 </th>
                                 <th></th>
                             </tr>
@@ -184,3 +167,4 @@
     </div>
     <!-- /.row -->
 </section>
+

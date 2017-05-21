@@ -8,3 +8,13 @@ D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Model\bin\Debug\EntityFram
 D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Model\obj\Debug\EFModel.csprojResolveAssemblyReference.cache
 D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Model\obj\Debug\Model.dll
 D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Model\obj\Debug\Model.pdb
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\bin\Debug\Model.dll.config
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\bin\Debug\Model.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\bin\Debug\Model.pdb
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\bin\Debug\EntityFramework.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\bin\Debug\EntityFramework.xml
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\obj\Debug\EFModel.csprojResolveAssemblyReference.cache
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\obj\Debug\Model.dll
+D:\PRACTICE EVERYDAY\Design Pattern\WebNhom\BaiNhomWebNangCao\Model\obj\Debug\Model.pdb

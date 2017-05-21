@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace EFController
 {
-    public abstract class ModelController<model> where model : class, new()
+    public abstract class ModelController<model> : Base where model : class, new() 
     {
         protected DbSet<model> Execute;
 
@@ -33,7 +33,8 @@ namespace EFController
 
         public ModelController()
         {
-            Execute = GetEF() as DbSet<model>;
+            if(Execute == null)
+                Execute = GetEF() as DbSet<model>;
         }
 
         #region Common Excution
@@ -206,6 +207,12 @@ namespace EFController
         {
             Execute.Attach(e);
             Base.Instance.Entry(e).State = EntityState.Modified;
+            return (Base.Instance.SaveChanges() > 0);
+        }
+
+        public bool Update(model e, model b)
+        {
+            Base.Instance.Entry(b).CurrentValues.SetValues(e);
             return (Base.Instance.SaveChanges() > 0);
         }
 
