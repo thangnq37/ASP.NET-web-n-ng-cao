@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebTuHocModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BaiHoc">
+    <Key>
+      <PropertyRef Name="IdBaiHoc" />
+    </Key>
+    <Property Name="IdBaiHoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="IdLBH" Type="int" Nullable="false" />
+    <Property Name="TieuDe" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="TomTat" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="UrlHinh" Type="varchar" MaxLength="200" />
+    <Property Name="Ngay" Type="datetime" Nullable="false" />
+    <Property Name="Content" Type="text" Nullable="false" />
+    <Property Name="SoLanXem" Type="int" />
+    <Property Name="KeyWords" Type="varchar" MaxLength="255" />
+    <Property Name="AnHien" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BinhLuan">
+    <Key>
+      <PropertyRef Name="IdBinhLuan" />
+    </Key>
+    <Property Name="IdBinhLuan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="IdBaiHoc" Type="int" Nullable="false" />
+    <Property Name="NoiDung" Type="text" Nullable="false" />
+    <Property Name="Ngay" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="IdHinh" />
+    </Key>
+    <Property Name="IdHinh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdBaiHoc" Type="int" Nullable="false" />
+    <Property Name="UrlHinh" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Like">
+    <Key>
+      <PropertyRef Name="IdBinhLuan" />
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdBinhLuan" Type="int" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="LuotLike" Type="int" />
+  </EntityType>
+  <EntityType Name="LoaiBaiHoc">
+    <Key>
+      <PropertyRef Name="IdLBH" />
+    </Key>
+    <Property Name="IdLBH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ThuTu" Type="int" Nullable="false" />
+    <Property Name="Id_LBH" Type="int" />
+    <Property Name="KeyWords" Type="varchar" MaxLength="255" />
+    <Property Name="MoTa" Type="text" Nullable="false" />
+    <Property Name="AnHien" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgaySinh" Type="datetime" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="GioiTinh" Type="bit" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BAIHOC_1 - N_LOAIBAIH">
+    <End Role="LoaiBaiHoc" Type="Self.LoaiBaiHoc" Multiplicity="1" />
+    <End Role="BaiHoc" Type="Self.BaiHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiBaiHoc">
+        <PropertyRef Name="IdLBH" />
+      </Principal>
+      <Dependent Role="BaiHoc">
+        <PropertyRef Name="IdLBH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BAIHOC_RELATIONS_USERS">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="BaiHoc" Type="Self.BaiHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="BaiHoc">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BINHLUAN_RELATIONS_BAIHOC">
+    <End Role="BaiHoc" Type="Self.BaiHoc" Multiplicity="1" />
+    <End Role="BinhLuan" Type="Self.BinhLuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaiHoc">
+        <PropertyRef Name="IdBaiHoc" />
+      </Principal>
+      <Dependent Role="BinhLuan">
+        <PropertyRef Name="IdBaiHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BINHLUAN_RELATIONS_USERS">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="BinhLuan" Type="Self.BinhLuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="BinhLuan">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMAGES_RELATIONS_BAIHOC">
+    <End Role="BaiHoc" Type="Self.BaiHoc" Multiplicity="1" />
+    <End Role="Images" Type="Self.Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaiHoc">
+        <PropertyRef Name="IdBaiHoc" />
+      </Principal>
+      <Dependent Role="Images">
+        <PropertyRef Name="IdBaiHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIKE_ASSOCIATI_BINHLUAN">
+    <End Role="BinhLuan" Type="Self.BinhLuan" Multiplicity="1" />
+    <End Role="Like" Type="Self.Like" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BinhLuan">
+        <PropertyRef Name="IdBinhLuan" />
+      </Principal>
+      <Dependent Role="Like">
+        <PropertyRef Name="IdBinhLuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIKE_ASSOCIATI_USERS">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Like" Type="Self.Like" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Like">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebTuHocModelStoreContainer">
+    <EntitySet Name="BaiHoc" EntityType="Self.BaiHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BinhLuan" EntityType="Self.BinhLuan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Like" EntityType="Self.Like" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiBaiHoc" EntityType="Self.LoaiBaiHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BAIHOC_1 - N_LOAIBAIH" Association="Self.FK_BAIHOC_1 - N_LOAIBAIH">
+      <End Role="LoaiBaiHoc" EntitySet="LoaiBaiHoc" />
+      <End Role="BaiHoc" EntitySet="BaiHoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BAIHOC_RELATIONS_USERS" Association="Self.FK_BAIHOC_RELATIONS_USERS">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BaiHoc" EntitySet="BaiHoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BINHLUAN_RELATIONS_BAIHOC" Association="Self.FK_BINHLUAN_RELATIONS_BAIHOC">
+      <End Role="BaiHoc" EntitySet="BaiHoc" />
+      <End Role="BinhLuan" EntitySet="BinhLuan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BINHLUAN_RELATIONS_USERS" Association="Self.FK_BINHLUAN_RELATIONS_USERS">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BinhLuan" EntitySet="BinhLuan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMAGES_RELATIONS_BAIHOC" Association="Self.FK_IMAGES_RELATIONS_BAIHOC">
+      <End Role="BaiHoc" EntitySet="BaiHoc" />
+      <End Role="Images" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIKE_ASSOCIATI_BINHLUAN" Association="Self.FK_LIKE_ASSOCIATI_BINHLUAN">
+      <End Role="BinhLuan" EntitySet="BinhLuan" />
+      <End Role="Like" EntitySet="Like" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIKE_ASSOCIATI_USERS" Association="Self.FK_LIKE_ASSOCIATI_USERS">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Like" EntitySet="Like" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

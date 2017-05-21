@@ -1,0 +1,15 @@
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\Observer.exe.config
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\Observer.exe
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\Observer.pdb
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\obj\Debug\Observer.csprojResolveAssemblyReference.cache
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\obj\Debug\Observer.exe
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\obj\Debug\Observer.pdb
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\EFController.dll
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\Model.dll
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\EntityFramework.dll
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\System.Linq.Dynamic.dll
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\EFController.pdb
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\Model.pdb
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\EntityFramework.xml
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\EntityFramework.SqlServer.dll
+D:\PRACTICE EVERYDAY\Design Pattern\BaiNhomWebNangCao\Observer\bin\Debug\EntityFramework.SqlServer.xml
