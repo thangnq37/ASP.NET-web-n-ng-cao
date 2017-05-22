@@ -1,0 +1,129 @@
+﻿@model Model.BaiHoc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Bài Học
+        @*<small>Version 2.0</small>*@
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="../Main/Index"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li class="active">Bài Học</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- /.box -->
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Chi Tiết Bài Học</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.TieuDe)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TieuDe)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.TomTat)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TomTat)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.UrlHinh)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.UrlHinh)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Ngay)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Ngay)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Content)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Content)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.SoLanXem)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SoLanXem)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.KeyWords)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.KeyWords)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AnHien)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AnHien)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LoaiBaiHoc.Ten)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LoaiBaiHoc.Ten)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Users.HoTen)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Users.HoTen)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <!-- /.box-body -->
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.IdBaiHoc }) |
+                        @Html.ActionLink("Back to List", "/Index")
+                    </p>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+
+

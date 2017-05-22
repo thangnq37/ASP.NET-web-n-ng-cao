@@ -12,7 +12,7 @@
         @*<small>Version 2.0</small>*@
     </h1>
     <ol class="breadcrumb">
-        <li><a href="../Main"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li><a href="../Main/index"><i class="fa fa-dashboard"></i> Admin</a></li>
         <li class="active">Loại Bài Học</li>
     </ol>
 </section>
@@ -23,7 +23,7 @@
             <!-- /.box -->
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Danh Sách Loại Bài Học</h3>
+                    <h3 class="box-title">Sửa Bình Luận</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -32,7 +32,6 @@
                         @Html.AntiForgeryToken()
 
                         <div class="form-horizontal">
-                            <h4>BinhLuan</h4>
                             <hr />
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.HiddenFor(model => model.IdBinhLuan)
@@ -77,6 +76,13 @@
                         </div>
                     }
                     <!-- /.box-body -->
+                    <div>
+                        @Html.ActionLink("Back to List", "/Index")
+                    </div>
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }
                 </div>
             </div>
             <!-- /.box -->
@@ -85,10 +91,4 @@
     </div>
     <!-- /.row -->
 </section>
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

@@ -157,12 +157,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\BinhLuanController.cs" />
+    <Compile Include="Areas\Admin\Controllers\table\BaiHocController.cs" />
+    <Compile Include="Areas\Admin\Controllers\table\BinhLuanController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
-    <Compile Include="Areas\Admin\Controllers\LoaiBaiHocController.cs" />
+    <Compile Include="Areas\Admin\Controllers\table\LoaiBaiHocController.cs" />
     <Compile Include="Areas\Admin\Controllers\MainController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ThuController.cs" />
-    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\table\UserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1102,17 +1102,21 @@
     <Content Include="JSCSSAdmin\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="JSCSSAdmin\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="JSCSSAdmin\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Areas\Admin\Views\Thu\Index.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiBaiHoc\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Thu\Create.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiBaiHoc\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Thu\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\BinhLuan\Index.cshtml" />
     <Content Include="Areas\Admin\Views\BinhLuan\Create.cshtml" />
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\Create.cshtml" />
     <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\BinhLuan\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiHoc\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiHoc\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiHoc\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BinhLuan\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiBaiHoc\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiHoc\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1145,7 +1149,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Default\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -3,10 +3,37 @@
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var ngay = Model.NgaySinh.Day;
+    var thang = Model.NgaySinh.Month;
+    var ngaySinh = "";
+    if (thang < 10) {
+        ngaySinh = Model.NgaySinh.Year + "-" + "0" + thang;
+    }
+    else
+    {
+        ngaySinh = Model.NgaySinh.Year + "-" + thang;
+    }
+    if (ngay < 10)
+    {
+        ngaySinh += "-" + "0" + ngay;
+    }
+    else
+    {
+        ngaySinh += ngay;
+    }
+
+    var Nam = false;
+    var Nu = false;
+    if (Model.GioiTinh)
+    {
+        Nam = true;
+    }
+    else
+    {
+        Nu = true;
+    }
+
 }
-
-<h2>Edit</h2>
-
 
 
 <section class="content-header">
@@ -15,7 +42,7 @@
         @*<small>Version 2.0</small>*@
     </h1>
     <ol class="breadcrumb">
-        <li><a href="../Main"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li><a href="../Main/index"><i class="fa fa-dashboard"></i> Admin</a></li>
         <li class="active">Sửa User</li>
     </ol>
 </section>
@@ -59,11 +86,10 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
+                                    <input type="date"  id="NgaySinh" name="NgaySinh" class="form-control" value="@ngaySinh"  /> 
                                     @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
@@ -76,7 +102,9 @@
                                 @Html.LabelFor(model => model.GioiTinh, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     <div class="checkbox">
-                                        @Html.EditorFor(model => model.GioiTinh)
+
+                                        Nam:   @Html.RadioButton("GioiTinh", true,Nam) &nbsp; &nbsp;
+                                        Nữ: @Html.RadioButton("GioiTinh", false,Nu)
                                         @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -98,6 +126,13 @@
                         </div>
                     }
                     <!-- /.box-body -->
+                    <div>
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }
                 </div>
             </div>
             <!-- /.box -->
@@ -106,10 +141,4 @@
     </div>
     <!-- /.row -->
 </section>
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

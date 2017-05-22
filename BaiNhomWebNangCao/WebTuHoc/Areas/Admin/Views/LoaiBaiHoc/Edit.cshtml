@@ -11,7 +11,7 @@
         @*<small>Version 2.0</small>*@
     </h1>
     <ol class="breadcrumb">
-        <li><a href="../Main"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li><a href="../Main/Index"><i class="fa fa-dashboard"></i> Admin</a></li>
         <li class="active">Loại Bài Học</li>
     </ol>
 </section>
@@ -31,7 +31,6 @@
                         @Html.AntiForgeryToken()
 
                         <div class="form-horizontal">
-                            <h4>LoaiBaiHoc</h4>
                             <hr />
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.HiddenFor(model => model.IdLBH)
@@ -108,6 +107,13 @@
                         </div>
                     }
                     <!-- /.box-body -->
+                    <div>
+                        @Html.ActionLink("Back to List", "/Index")
+                    </div>
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }
                 </div>
             </div>
             <!-- /.box -->
@@ -117,10 +123,4 @@
     <!-- /.row -->
 </section>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

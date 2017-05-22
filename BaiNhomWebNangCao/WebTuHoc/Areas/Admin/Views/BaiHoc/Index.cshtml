@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Model.BinhLuan>
+﻿@model IEnumerable<Model.BaiHoc>
 
 @{
     ViewBag.Title = "Index";
@@ -8,12 +8,12 @@
 
 <section class="content-header">
     <h1>
-        Bình Luận
+        Bài Học
         @*<small>Version 2.0</small>*@
     </h1>
     <ol class="breadcrumb">
-        <li><a href="../Main/index"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Bình Luận</li>
+        <li><a href="../Main/Index"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li class="active">Bài Học</li>
     </ol>
 </section>
 @*<section class="content-header">
@@ -77,9 +77,8 @@
         <small>advanced tables</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
+        <li><a href="../Main/Index"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li class="active">Danh Sách Bài Học</li>
     </ol>
 </section>*@
 <!-- Main content -->
@@ -89,11 +88,11 @@
             <!-- /.box -->
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Danh Sách Bình Luận</h3>
+                    <h3 class="box-title">Danh Sách Bài Học</h3>
                 </div>
                 <div>
                     <p>
-                        @Html.ActionLink("Thêm Bình Luận", "Create")
+                        @Html.ActionLink("Thêm Bài Học", "Create")
                     </p>
                 </div>
                 <!-- /.box-header -->
@@ -102,13 +101,31 @@
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.NoiDung)
+                                    @Html.DisplayNameFor(model => model.TieuDe)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TomTat)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.UrlHinh)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Ngay)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.BaiHoc.TieuDe)
+                                    @Html.DisplayNameFor(model => model.Content)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SoLanXem)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.KeyWords)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AnHien)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoaiBaiHoc.Ten)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Users.HoTen)
@@ -121,21 +138,39 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.NoiDung)
+                                        @Html.DisplayFor(modelItem => item.TieuDe)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TomTat)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UrlHinh)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Ngay)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.BaiHoc.TieuDe)
+                                        @Html.DisplayFor(modelItem => item.Content)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SoLanXem)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.KeyWords)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AnHien)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoaiBaiHoc.Ten)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Users.HoTen)
                                     </td>
                                     <td>
-                                        @Html.ActionLink("Edit", "Edit", new { id = item.IdBinhLuan }) |
-                                        @Html.ActionLink("Details", "Details", new { id = item.IdBinhLuan }) |
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.IdBinhLuan })
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.IdBaiHoc }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.IdBaiHoc }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.IdBaiHoc })
                                     </td>
                                 </tr>
                             }
@@ -143,13 +178,31 @@
                         <tfoot>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.NoiDung)
+                                    @Html.DisplayNameFor(model => model.TieuDe)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TomTat)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.UrlHinh)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Ngay)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.BaiHoc.TieuDe)
+                                    @Html.DisplayNameFor(model => model.Content)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SoLanXem)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.KeyWords)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AnHien)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoaiBaiHoc.Ten)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Users.HoTen)
@@ -167,4 +220,5 @@
     </div>
     <!-- /.row -->
 </section>
+
 

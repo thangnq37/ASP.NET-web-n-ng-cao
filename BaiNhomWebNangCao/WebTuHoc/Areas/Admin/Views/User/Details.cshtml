@@ -1,0 +1,95 @@
+﻿@model Model.Users
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Users
+        @*<small>Version 2.0</small>*@
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="../Main/Index"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li class="active">Users</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- /.box -->
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Chi Tiết User</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.HoTen)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.HoTen)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Username)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Username)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.NgaySinh)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NgaySinh)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.GioiTinh)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.GioiTinh)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Level)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Level)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.IdUser }) |
+                        @Html.ActionLink("Back to List", "/Index")
+                    </p>
+                    <!-- /.box-body -->
+                </div>
+                
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>

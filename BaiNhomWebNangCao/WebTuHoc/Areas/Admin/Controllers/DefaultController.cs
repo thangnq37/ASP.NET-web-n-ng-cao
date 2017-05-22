@@ -48,7 +48,7 @@ namespace WebTuHoc.Areas.Admin.Controllers
         public virtual ActionResult Edit(int id)
         {
             ModelController<m> list = GetController() as ModelController<m>;
-            var lbh = list.SelectWhere("IdLBH == " + id).FirstOrDefault();
+            var lbh = list.SelectWhere(GetIDName() + "==" + id).FirstOrDefault();
             return View(lbh);
         }
         [HttpPost]
@@ -71,6 +71,14 @@ namespace WebTuHoc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public virtual ActionResult Details(int id)
+        {
+            ModelController<m> list = GetController() as ModelController<m>;
+            var a = RouteData.Values["id"];
+            var lbh1 = list.SelectWhere(GetIDName() + "==" + a).FirstOrDefault();
+            return View(lbh1);
+        }
         private object GetIDName()
         {
             m t = new m();
