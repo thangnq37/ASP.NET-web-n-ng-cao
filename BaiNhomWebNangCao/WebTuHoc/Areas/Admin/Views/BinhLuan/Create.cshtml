@@ -72,6 +72,13 @@
                             </div>
                         </div>
                     }
+                    <div>
+                        @Html.ActionLink("Back to List", "/Index")
+                    </div>
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }
                     <!-- /.box-body -->
                 </div>
             </div>
@@ -83,11 +90,3 @@
 </section>
 
 
-
-<div>
-    @Html.ActionLink("Back to List", "/Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

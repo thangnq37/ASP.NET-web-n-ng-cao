@@ -4,36 +4,408 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/Content/my-layout.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <!-- SCROLL UP -->
+    <a href="#" id="back-to-top"><span class='fa fa-arrow-up'></span></a>
+    <!-- END SCROLL UP -->
+
+    <div class="box effect2">
+        <nav class="navbar navbar-inverse menu-top">
+
+            <div class="container">
+                <!-- List Menu -->
+
+                <div id="list-menu" title="Back to top">
+                    <div id="flip">Click !!</div>
+                    <div id="list-menu-right">
+                        <h2>Mục lục</h2>
+                        <a href="">menu 1</a><br>
+                        <a href="">menu 2</a><br>
+                        <a href="">menu 3</a><br>
+                        <a href="">menu 4</a><br>
+                        <a href="">menu 5</a><br>
+                    </div>
+                </div>
+
+                <script>
+
+if ($('#list-menu')) {
+    var scrollTrigger = 100, // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('#list-menu').addClass('show');
+            } else {
+                $('#list-menu').removeClass('show');
+            }
+        };
+    backToTop();
+    $(window).on('scroll', function () {
+        backToTop();
+    });
+    $('#list-menu').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+}
+
+                </script>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-top-left">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Page 1-1</a></li>
+                                <li><a href="#">Page 1-2</a></li>
+                                <li><a href="#">Page 1-3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Page 2</a></li>
+                        <li><a href="#">Page 3</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-top-right">
+                        <li><a href="#" class="facebook"><span class="fa fa-facebook-official"></span></a></li>
+                        <li><a href="#" class="google"><span class="fa fa-google-plus-square"></span></a></li>
+                        <li><a href="#" class="youtube"><span class="fa fa-youtube"></span></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+
+        </nav>
+        <div class="container header-top">
+            <h1>Nhóm 2 web nâng cao</h1>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#menu1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><span style="font-size:24px" class="fa fa-home"></span></a>
+                </div>
+                <div class="collapse navbar-collapse" id="menu1">
+                    <ul class="nav navbar-nav menu-main">
+                        <li><a href="index2.html">menu 1</a></li>
+                        <li><a href="google.com">menu 2</a></li>
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown">menu 3<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a>menu 3.1</a></li>
+                                <li><a>menu 3.2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right menu-main">
+                        <li>
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <form action="" class="navbar-form">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" style="width: 200px;" placeholder="Search ...">
+                                            <div class="input-group-btn">
+                                                <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Sign in <span class="glyphicon glyphicon-user"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- BODY-MAIN -->
+        <!-- directory -->
+        @RenderBody()
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="container">
+                    <div class="directory-run">
+                        <div class="col-md-1 col-sm-2 col col-xs-3 directory-left">
+                            <div class="directory-boder-right">
+                                <strong>BẢNG TIN</strong>
+                            </div>
+                        </div>
+
+                        <div class="col-md-11 col-sm-10 col-xs-9 directory-content">
+                            <div class="directory-boder-left">
+
+                            </div>
+                            <marquee direction="right">Đây là nhóm lập trình web nâng cao</marquee>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- end directory -->
+        <!-- Main Container -->
+        <div class="container">
+            <!--  Sidebar Left -->
+            <div class="col-lg-2 col-md-12 sidebar-left">
+                <div class="panel panel-default header-panel">
+                    <div class="panel-heading">
+                        <p class="text-header-label"><span class="header-label">THÔNG TIN</span></p>
+                    </div>
+                    <div class="panel-body">Panel Content</div>
+                </div>
+            </div>
+            <!-- End Sidebar Left -->
+            <!-- Main Center -->
+            <div class="col-lg-7 col-md-8 main-center">
+                <div class="panel panel-default header-panel">
+                    <div class="panel-heading">
+                        <p class="text-header-label"><span class="header-label">BÀI VIẾT MỚI</span></p>
+                    </div>
+                    <div class="main-contain-top">
+                        <div class="row">
+                            <div class="container-fluid">
+                                <div class="information-top">
+                                    <h2><a href="index1.html" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
+                                    <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                                </div>
+                                <div class="information-write">
+                                    <div class="information-write-image">
+                                        <a href="#" class="information-link-image">
+                                            <img class='information-image' src="Wind.png" alt="Wind">
+                                        </a>
+                                    </div>
+                                    <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-contain">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="information-top">
+                                <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
+                                <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                            </div>
+                            <div class="information-write">
+                                <div class="information-write-image">
+                                    <a href="#" class="information-link-image">
+                                        <img class='information-image' src="Wind.png" alt="Wind">
+                                    </a>
+                                </div>
+                                <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-contain">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="information-top">
+                                <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
+                                <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                            </div>
+                            <div class="information-write">
+                                <div class="information-write-image">
+                                    <a href="#" class="information-link-image">
+                                        <img class='information-image' src="Wind.png" alt="Wind">
+                                    </a>
+                                </div>
+                                <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-contain">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="information-top">
+                                <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
+                                <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                            </div>
+                            <div class="information-write">
+                                <div class="information-write-image">
+                                    <a href="#" class="information-link-image">
+                                        <img class='information-image' src="Wind.png" alt="Wind">
+                                    </a>
+                                </div>
+                                <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-contain">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="information-top">
+                                <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
+                                <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                            </div>
+                            <div class="information-write">
+                                <div class="information-write-image">
+                                    <a href="#" class="information-link-image">
+                                        <img class='information-image' src="Wind.png" alt="Wind">
+                                    </a>
+                                </div>
+                                <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-contain">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="information-top">
+                                <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
+                                <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                            </div>
+                            <div class="information-write">
+                                <div class="information-write-image">
+                                    <a href="#" class="information-link-image">
+                                        <img class='information-image' src="Wind.png" alt="Wind">
+                                    </a>
+                                </div>
+                                <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-contain">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="information-top">
+                                <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
+                                <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                            </div>
+                            <div class="information-write">
+                                <div class="information-write-image">
+                                    <a href="#" class="information-link-image">
+                                        <img class='information-image' src="Wind.png" alt="Wind">
+                                    </a>
+                                </div>
+                                <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-contain">
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="information-top">
+                                <h2><a href="#" class="text-header">Bài 2: Các thẻ cơ bản về Css</a></h2>
+                                <p class="information-content"> Tác giả:&nbsp;Thắng  &nbsp;&nbsp;&nbsp; Ngày:&nbsp;16/04/2017 &nbsp;&nbsp;&nbsp; Thuộc:&nbsp;<a href="#" class="information-link">Học Css</a> </p>
+                            </div>
+                            <div class="information-write">
+                                <div class="information-write-image">
+                                    <a href="#" class="information-link-image">
+                                        <img class='information-image' src="Wind.png" alt="Wind">
+                                    </a>
+                                </div>
+                                <p class="information-write-content">Xin chào tất cả các bạn, chào mừng các bạn đã quay trở lại với Thắng trong danh sách bài hướng dẫn xây dựng trang html-css. Ở trong bài trước, chúng ta đã hoàn thiện các chức năng của bài viết, hôm nay mình sẽ hướng dẫn các bạn một số các cái yêu cẩu của css. cú pháp của nó.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- End Main Center -->
+            <!-- Sidebar Right -->
+            <div class="col-lg-3 col-md-4 sidebar-right">
+                <div class="panel panel-default header-panel">
+                    <div class="panel-heading">
+                        <p class="text-header-label"><span class="header-label">SERIES BÀI HỌC</span></p>
+                    </div>
+                    <div class="panel-body">Panel Content</div>
+                </div>
+            </div>
+            <!-- End Sidebar Right -->
+
+        </div>
+        <!-- Main Container -->
+        <!-- END MAIN -->
+        <!-- Footer -->
+        <div class="footer">
+            <div class="main-footer">
+                <div class="container">
+                    <div class="col-lg-5">
+                        <ul class="footer-lession">
+                            <li><h3>Khóa lục</h3></li>
+                            <li><a href="#"><img src="Wind.png" alt="">Tự học HTML</a></li>
+                            <li><a href="#"><img src="Wind.png" alt="">Tự học CSS</a></li>
+                            <li><a href="#"><img src="Wind.png" alt="">Tự học PHP</a></li>
+                            <li><a href="#"><img src="Wind.png" alt="">Tự học Laravel Framework</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7">
+                        <ul class="footer-lession">
+                            <li><h3>Giới thiệu</h3></li>
+                            <li>
+                                <div class="image-intro">
+                                    <img src="Wind.png" alt="">
+                                </div>
+                                <div>
+                                    Chào mọi người nhóm mình là nhóm 3 đang thực hiện các chương trình thật tập các môn trên trường xong xong đó nhóm mình thực hiện làm website này với mục đích là làm các bài học và chia sẽ kinh nghiệm của bản thân. Chào mọi người nhóm mình là nhóm 3 đang thực hiện các chương trình thật tập các môn trên trường xong xong đó nhóm mình thực hiện làm website này với mục đích là làm các bài học và chia sẽ kinh nghiệm của bản thân. Chào mọi người nhóm mình là nhóm 3 đang thực hiện các chương trình thật tập các môn trên trường xong xong đó nhóm mình thực hiện làm website này với mục đích là làm các bài học và chia sẽ kinh nghiệm của bản thân.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    2017 Powered By ThangNQ, Theme By ThangNQ
+                    <ul class="nav navbar-nav navbar-right navbar-top-right">
+                        <li><a href="#" class="google"><span class="fa fa-google-plus-square"></span></a></li>
+                        <li><a href="#" class="facebook"><span class="fa fa-facebook-official"></span></a></li>
+                        <li><a href="#" class="youtube"><span class="fa fa-youtube"></span></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- END FOOTER -->
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+	if ($('#back-to-top').length) {
+    var scrollTrigger = 100, // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('#back-to-top').addClass('show');
+            } else {
+                $('#back-to-top').removeClass('show');
+            }
+        };
+    backToTop();
+    $(window).on('scroll', function () {
+        backToTop();
+    });
+    $('#back-to-top').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+}
+    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

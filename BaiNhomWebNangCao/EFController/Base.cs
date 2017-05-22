@@ -9,12 +9,9 @@ namespace EFController
 {
     public abstract class Base
     {
-        public EF thu;
         private static volatile EF _instance;
         private static object syncRoot = new Object();
-        public Base(){
-            thu = new EF();
-        }
+        private Base(){}
         public static EF Instance
         {
             get{

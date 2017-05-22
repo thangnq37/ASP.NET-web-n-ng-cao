@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace EFController
 {
-    public abstract class ModelController<model> : Base where model : class, new() 
+    public abstract class ModelController<model>  where model : class, new() 
     {
         protected DbSet<model> Execute;
 
