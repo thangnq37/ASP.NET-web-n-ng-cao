@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var gioiTinh = "";
 }
 
 
@@ -140,7 +141,15 @@
                                         @Html.DisplayFor(modelItem => item.Email)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.GioiTinh)
+                                        @if (item.GioiTinh)
+                                        {
+                                            gioiTinh = "Nam"; 
+                                        }
+                                        else
+                                        {
+                                            gioiTinh = "Nữ";
+                                        }
+                                        @gioiTinh
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Level)

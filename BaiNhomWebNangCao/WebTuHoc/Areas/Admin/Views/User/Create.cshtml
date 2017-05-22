@@ -70,8 +70,8 @@
                                 @Html.LabelFor(model => model.GioiTinh, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     <div class="checkbox">
-                                        Nam:   @Html.RadioButton("GioiTinh", true) &nbsp; &nbsp;
-                                        Nữ: @Html.RadioButton("GioiTinh", false)
+                                        Nam:   @Html.RadioButton("GioiTinh", true,true, htmlAttributes: new { @class = "minimal-red" }) &nbsp; &nbsp;
+                                        Nữ: @Html.RadioButton("GioiTinh", false,false, htmlAttributes: new { @class = "minimal-red" })
                                         @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

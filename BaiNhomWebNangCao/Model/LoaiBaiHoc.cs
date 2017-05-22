@@ -21,6 +21,7 @@ namespace Model
             this.BaiHoc = new HashSet<BaiHoc>();
         }
         public int IdLBH { get; set; }
+        [Required]
         [Display(Name = "Tên Loại Bài")]
         public string Ten { get; set; }
         [Display(Name = "Thứ Tự")]

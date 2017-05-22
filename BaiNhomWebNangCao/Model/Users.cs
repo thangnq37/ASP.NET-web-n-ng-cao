@@ -24,13 +24,15 @@ namespace Model
         }
     
         public int IdUser { get; set; }
-        [Display(Name ="Họ Tên")]
+        [Required]
+        [Display(Name = "Họ Tên")]
         public string HoTen { get; set; }
         [Required]
-        [StringLength(60, MinimumLength = 6)]
         public string Username { get; set; }
+        [Display(Name = "Ngày Sinh")]
         public System.DateTime NgaySinh { get; set; }
         public string Email { get; set; }
+        [Display(Name = "Giới Tính")]
         public bool GioiTinh { get; set; }
         public int Level { get; set; }
     
