@@ -11,10 +11,13 @@ namespace WebTuHoc.Areas.Admin.Controllers.table
     public class BaiHocController : DefaultController<BaiHoc>
     {
         // GET: Admin/BaiHoc
-        //public override ActionResult Index()
-        //{
-        //    return View();
-        //}
+        public override ActionResult Create()
+        {
+            ModelController<LoaiBaiHoc> listLBH = new EFController.LoaiBaiHocController();
+            var lsLBH = listLBH.SelectAll();
+            ViewData["lsLBH"] = lsLBH;
+            return View();
+        }
 
     }
 }
